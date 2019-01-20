@@ -81,14 +81,55 @@
         <div class="row">
           <div class="col-md-12">
             <h1> vue.jsの練習</h1>
-          </div>
-        </div>
 
-        <div class="row">
-          <div class="col-md-12">
+            <h2>app-1</h2>
             <div id="app">
               <p>{{ message }}</p>
             </div>
+
+            <h2>app-2</h2>
+            <div id="app-2">
+              <!-- v-bindでtitle属性の値をvueで管理する -->
+              <span v-bind:title="message">
+                Hover your mouse over me for a few seconds
+                to see my dynamically bound title!
+              </span>
+            </div>
+
+            <h2>app-3</h2>
+            <div id="app-3">
+              <span v-if="seen">Now you see me</span>
+            </div>
+
+            <h2>app-4</h2>
+            <div id="app-4">
+              <ol>
+                <li v-for="todo in todos">
+                  {{ todo.text }}
+                </li>
+              </ol>
+            </div>
+
+            <h2>app-5</h2>
+            <div id="app-5">
+              <p>{{ message }}</p>
+              <button v-on:click="reverseMessage">Reverse Message</button>
+            </div>
+
+            <h2>app-7</h2>
+            <div id="app-7">
+              <ol>
+                <!--
+                  各 todo-item の内容を表す todo オブジェクトを与えます。
+                  これにより内容は動的に変化します。
+                  また後述する "key" を各コンポーネントに提供する必要があります。
+                -->
+                <todo-item v-for="item in groceryList" v-bind:todo="item" v-bind:key="item.id"></todo-item>
+              </ol>
+            </div>
+
+
+
           </div>
         </div>
 
