@@ -5,4 +5,3 @@
 練習１．
 
 <https://takamitsu-iida.github.io/vuejs-practice/index.1.html>
-
