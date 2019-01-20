@@ -74,6 +74,24 @@
     });
 
 
+    // 算出プロパティvs監視プロパティ
+    var sansyutsu = new Vue({
+      el: '#demo',
+      data: {
+        firstName: 'Foo',
+        lastName: 'Bar'
+      },
+      computed: {
+        fullName: {
+          // getter
+          get: function () {
+            return this.firstName + ' ' + this.lastName;
+          }
+        }
+      }
+    });
+
+
   };
   //
 })();
