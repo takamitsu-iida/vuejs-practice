@@ -129,7 +129,15 @@
             </div>
 
             <h2>算出プロパティvs監視プロパティ</h2>
-            <div id="demo">{{ fullName }}</div>
+            <div id="sansyutsuObj">{{ fullName }}</div>
+
+            <h2>スタイルオブジェクト</h2>
+            <div id="styleObj">
+              <div v-bind:style="styleObject"><p>Hello World</p></div>
+            </div>
+
+
+
 
           </div>
         </div>

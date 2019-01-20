@@ -75,8 +75,8 @@
 
 
     // 算出プロパティvs監視プロパティ
-    var sansyutsu = new Vue({
-      el: '#demo',
+    var sansyutsuObj = new Vue({
+      el: '#sansyutsuObj',
       data: {
         firstName: 'Foo',
         lastName: 'Bar'
@@ -90,6 +90,22 @@
         }
       }
     });
+
+    // 算出プロパティvs監視プロパティ
+    var styleObj = new Vue({
+      el: '#styleObj',
+      data: {
+        styleObject: {
+          color: 'red',
+          fontSize: '13px'
+        }
+      }
+    });
+
+
+
+
+
 
 
   };
