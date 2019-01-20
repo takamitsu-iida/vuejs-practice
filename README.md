@@ -6,9 +6,13 @@
 
 ## ライブデモ(github pages)
 
-練習１．
+### 練習１．
 
 <https://takamitsu-iida.github.io/vuejs-practice/index.1.html>
+
+### 練習２．
+
+<https://takamitsu-iida.github.io/vuejs-practice/index.2.html>
 
 ## 省略記法
 
