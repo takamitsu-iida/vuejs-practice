@@ -1,21 +1,23 @@
-﻿# フォルダごと無視
-/data/
 
-# vscodeのワークスペースは無視
-*.code-workspace
+# フォルダごと無視
+/data/
 
 # フォルダは残すけどその下はすべて無視
 /log/*
 /logs/*
 _config_/*
 
+backup/
 log/
 logs/
+
+# vs code
+*.code-workspace
 
 # pickleで保存したファイルは無視
 *.pickle
 
-# ansibleのリトライファイルは虫
+# ansibleのリトライファイルは無視
 *.retry
 
 # 内緒の設定ファイル
@@ -27,17 +29,21 @@ logs/
 #
 # 以下、giboによる自動生成
 #
-# $ gibo Windows Linux OSX Emacs vim python node >> .gitignore
+# gibo dump Windows Linux macOS Emacs vim python Node >> .gitignore
 #
 
-### Windows
+### https://raw.github.com/github/gitignore/d34e91530084f6b11b4b90621f9a4f2a895f3f3c/Global/Windows.gitignore
 
-# Windows image file caches
+# Windows thumbnail cache files
 Thumbs.db
 ehthumbs.db
+ehthumbs_vista.db
+
+# Dump file
+*.stackdump
 
 # Folder config file
-Desktop.ini
+[Dd]esktop.ini
 
 # Recycle Bin used on file shares
 $RECYCLE.BIN/
@@ -45,6 +51,7 @@ $RECYCLE.BIN/
 # Windows Installer files
 *.cab
 *.msi
+*.msix
 *.msm
 *.msp
 
@@ -52,7 +59,7 @@ $RECYCLE.BIN/
 *.lnk
 
 
-### Linux
+### https://raw.github.com/github/gitignore/d34e91530084f6b11b4b90621f9a4f2a895f3f3c/Global/Linux.gitignore
 
 *~
 
@@ -65,15 +72,20 @@ $RECYCLE.BIN/
 # Linux trash folder which might appear on any partition or disk
 .Trash-*
 
+# .nfs files are created when an open file is removed but is still being accessed
+.nfs*
 
-### OSX
 
-*.DS_Store
+### https://raw.github.com/github/gitignore/d34e91530084f6b11b4b90621f9a4f2a895f3f3c/Global/macOS.gitignore
+
+# General
+.DS_Store
 .AppleDouble
 .LSOverride
 
 # Icon must end with two \r
 Icon
+
 
 # Thumbnails
 ._*
@@ -95,7 +107,7 @@ Temporary Items
 .apdisk
 
 
-### Emacs
+### https://raw.github.com/github/gitignore/d34e91530084f6b11b4b90621f9a4f2a895f3f3c/Global/Emacs.gitignore
 
 # -*- mode: gitignore; -*-
 *~
@@ -140,21 +152,36 @@ flycheck_*.el
 # projectiles files
 .projectile
 
-### vim
+# directory configuration
+.dir-locals.el
 
-# swap
-[._]*.s[a-w][a-z]
-[._]s[a-w][a-z]
-# session
+# network security
+/network-security.data
+
+
+
+### https://raw.github.com/github/gitignore/d34e91530084f6b11b4b90621f9a4f2a895f3f3c/Global/Vim.gitignore
+
+# Swap
+[._]*.s[a-v][a-z]
+[._]*.sw[a-p]
+[._]s[a-rt-v][a-z]
+[._]ss[a-gi-z]
+[._]sw[a-p]
+
+# Session
 Session.vim
-# temporary
+
+# Temporary
 .netrwhist
 *~
-# auto-generated tag files
+# Auto-generated tag files
 tags
+# Persistent undo
+[._]*.un~
 
 
-### python
+### https://raw.github.com/github/gitignore/d34e91530084f6b11b4b90621f9a4f2a895f3f3c/Python.gitignore
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
@@ -166,21 +193,24 @@ __pycache__/
 
 # Distribution / packaging
 .Python
-env/
 build/
 develop-eggs/
 dist/
 downloads/
 eggs/
 .eggs/
-# lib/
+lib/
 lib64/
 parts/
 sdist/
 var/
+wheels/
+pip-wheel-metadata/
+share/python-wheels/
 *.egg-info/
 .installed.cfg
 *.egg
+MANIFEST
 
 # PyInstaller
 #  Usually these files are written by a python script from a template
@@ -195,13 +225,15 @@ pip-delete-this-directory.txt
 # Unit test / coverage reports
 htmlcov/
 .tox/
+.nox/
 .coverage
 .coverage.*
 .cache
 nosetests.xml
 coverage.xml
-*,cover
+*.cover
 .hypothesis/
+.pytest_cache/
 
 # Translations
 *.mo
@@ -210,6 +242,7 @@ coverage.xml
 # Django stuff:
 *.log
 local_settings.py
+db.sqlite3
 
 # Flask stuff:
 instance/
@@ -224,8 +257,12 @@ docs/_build/
 # PyBuilder
 target/
 
-# IPython Notebook
+# Jupyter Notebook
 .ipynb_checkpoints
+
+# IPython
+profile_default/
+ipython_config.py
 
 # pyenv
 .python-version
@@ -233,27 +270,45 @@ target/
 # celery beat schedule file
 celerybeat-schedule
 
-# dotenv
-.env
+# SageMath parsed files
+*.sage.py
 
-# virtualenv
-.venv/
+# Environments
+.env
+.venv
+env/
 venv/
 ENV/
+env.bak/
+venv.bak/
 
 # Spyder project settings
 .spyderproject
+.spyproject
 
 # Rope project settings
 .ropeproject
 
+# mkdocs documentation
+/site
 
-### node
+# mypy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Pyre type checker
+.pyre/
+
+
+### https://raw.github.com/github/gitignore/d34e91530084f6b11b4b90621f9a4f2a895f3f3c/Node.gitignore
 
 # Logs
 logs
 *.log
 npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
 
 # Runtime data
 pids
@@ -270,18 +325,24 @@ coverage
 # nyc test coverage
 .nyc_output
 
-# Grunt intermediate storage (http://gruntjs.com/creating-plugins#storing-task-files)
+# Grunt intermediate storage (https://gruntjs.com/creating-plugins#storing-task-files)
 .grunt
+
+# Bower dependency directory (https://bower.io/)
+bower_components
 
 # node-waf configuration
 .lock-wscript
 
-# Compiled binary addons (http://nodejs.org/api/addons.html)
+# Compiled binary addons (https://nodejs.org/api/addons.html)
 build/Release
 
 # Dependency directories
-node_modules
-jspm_packages
+node_modules/
+jspm_packages/
+
+# TypeScript v1 declaration files
+typings/
 
 # Optional npm cache directory
 .npm
@@ -291,4 +352,36 @@ jspm_packages
 
 # Optional REPL history
 .node_repl_history
+
+# Output of 'npm pack'
+*.tgz
+
+# Yarn Integrity file
+.yarn-integrity
+
+# dotenv environment variables file
+.env
+.env.test
+
+# parcel-bundler cache (https://parceljs.org/)
+.cache
+
+# next.js build output
+.next
+
+# nuxt.js build output
+.nuxt
+
+# vuepress build output
+.vuepress/dist
+
+# Serverless directories
+.serverless/
+
+# FuseBox cache
+.fusebox/
+
+# DynamoDB Local files
+.dynamodb/
+
 
